@@ -1,0 +1,31 @@
+# Author: Brenda Makonyere,Date; 25 October 2024; Purpose; Calculate t test
+# Create 2 dummy groups called x and y, using rmorm function () 
+
+
+x = rnorm(50)
+y = rnorm(100)
+
+# Create a sequence of 100 pts from -4.5 to +4.5 
+pts = seq(-4.5,4.5,length=100)
+
+# Create a density plot of 100 pts between -4.5 to +4.5
+plot(pts,dt(pts,df=9),col='red',type='l')
+
+# Lable X axis "Points", and Y axis " Density"
+plot(pts,dt(pts,df=9),col='red',type='l',xlab="Points",ylab="Density")
+
+lines(density(x), col='green')
+lines(density(y), col='blue')
+ttest = t.test(x,y)
+ttest
+
+  Welch Two Sample t-test
+
+data:  x and y
+t = 0.76194, df = 101.07, p-value = 0.4479
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.2090419  0.4697719
+sample estimates:
+  mean of x   mean of y 
+ 0.11392121 -0.01644379 
